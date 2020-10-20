@@ -131,3 +131,15 @@ let reduced = epic.reduce(acc=(phrase, word)=>{
 });
 
 console.log(reduced);
+
+
+// Exercici 5
+// Crear una funció que accepti un string i retornada aquest string revertit. 
+//Nota: Usar funció fletxa (arrow functions), l'operador de prograpación (spread operator) y el mètode .reverse()
+
+let reverseString = (text) => {
+     let reversed = text.split("").reverse().join("");
+     return reversed;
+};
+
+console.log(reverseString('hello'));
