@@ -138,8 +138,38 @@ console.log(reduced);
 //Nota: Usar funció fletxa (arrow functions), l'operador de prograpación (spread operator) y el mètode .reverse()
 
 let reverseString = (text) => {
-     let reversed = text.split("").reverse().join("");
-     return reversed;
+    let reversed = text.split("").reverse().join("");
+    return reversed;
 };
 
 console.log(reverseString('hello'));
+
+
+//Exercici 6
+//Reemplaça en el següent bloc de codi la promesa per aync/await:
+ 
+// function b() {
+//     // ...
+//  }
+// function a() {
+//     b().then() =>{
+//     doMoreWork();
+//     }
+// }
+
+let doMoreWork =(text) => console.log(text);
+
+function b() {
+    return new Promise ((resolve, reject) => {
+        setTimeout( () => {
+            resolve ('ok');
+        }, 3000);
+    });
+}
+
+async function a() {
+    let waitForB= await b();
+    doMoreWork(waitForB);
+}
+
+a();
